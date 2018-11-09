@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -31,7 +32,7 @@ public class LevelOneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_one);
 
-        LinearLayout main_layout = (LinearLayout) this.findViewById(R.id.linear);
+        LinearLayout main_layout = this.findViewById(R.id.linear);
 
         List<HashMap<String, String>> object = new ArrayList<>();
         object.add(new HashMap<String, String>() {{
@@ -54,9 +55,25 @@ public class LevelOneActivity extends AppCompatActivity {
             put("resource", "f");
             put("image", "dva");
         }});
+        object.add(new HashMap<String, String>() {{
+            put("text", "Sol");
+            put("resource", "g");
+            put("image", "genji");
+        }});
+        object.add(new HashMap<String, String>() {{
+            put("text", "La");
+            put("resource", "a");
+            put("image", "rein");
+        }});
+        object.add(new HashMap<String, String>() {{
+            put("text", "Si");
+            put("resource", "b");
+            put("image", "mercy2");
+        }});
 
         for (final HashMap reg : object){
             Button nuevo = new Button(this);
+            nuevo.setBackgroundResource(R.drawable.boton);
             nuevo.setText((CharSequence) reg.get("text"));
             main_layout.addView(nuevo);
             final int resId = getResId((String) reg.get("resource"), R.raw.class);
@@ -68,7 +85,6 @@ public class LevelOneActivity extends AppCompatActivity {
                 }
             });
         }
-
     }
 
     public void showImage(String image_name) {
@@ -86,8 +102,9 @@ public class LevelOneActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(this);
         imageView.setImageURI(Uri.parse("android.resource://" + getPackageName() + "/drawable/" + image_name));
 
-        Button temp_button = new Button(this);
-        temp_button.setText("Song");
+        ImageButton temp_button = new ImageButton(this);
+        //temp_button.setText(R.string.play_song);
+        temp_button.setImageResource(R.drawable.play);
         final MediaPlayer player = createMediaPlayer(getResId("loop", R.raw.class));
 
         temp_button.setOnClickListener(new View.OnClickListener() {
@@ -101,8 +118,8 @@ public class LevelOneActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         builder.addContentView(temp_button, new RelativeLayout.LayoutParams(
-                100,
-                100));
+                200,
+                200));
         builder.show();
         builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override

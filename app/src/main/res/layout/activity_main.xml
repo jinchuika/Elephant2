@@ -4,32 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="142dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="58dp"
+        android:backgroundTint="@android:color/transparent"
         android:onClick="goToLevelOne"
+        android:src="@drawable/nivel1"
         android:text="Nivel 1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="58dp"
+        android:background="@android:color/transparent"
         android:onClick="goToLevelTwo"
+        android:src="@drawable/nivel2"
         android:text="Nivel 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="58dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:srcCompat="@drawable/nivel3" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="51dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:srcCompat="@drawable/nivel4" />
 
 </android.support.constraint.ConstraintLayout>

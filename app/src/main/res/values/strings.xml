@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Elephant</string>
+    <string name="play_song">▶️ Play</string>
 </resources>
