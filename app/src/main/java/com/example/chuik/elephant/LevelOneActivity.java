@@ -5,19 +5,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -99,13 +109,22 @@ public class LevelOneActivity extends AppCompatActivity {
             }
         });
 
-        ImageView imageView = new ImageView(this);
+        final ImageView imageView = new ImageView(this);
+        SimpleTarget<Drawable> glideImageView = new SimpleTarget<Drawable>() {
+            @Override
+            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                imageView.setImageDrawable(resource);
+            }
+        };
+        /*Glide.with(this)
+                .load(Uri.parse("android.resource://" + getPackageName() + "/drawable/" + image_name))
+                .into(glideImageView);*/
         imageView.setImageURI(Uri.parse("android.resource://" + getPackageName() + "/drawable/" + image_name));
 
         ImageButton temp_button = new ImageButton(this);
         //temp_button.setText(R.string.play_song);
         temp_button.setImageResource(R.drawable.play);
-        final MediaPlayer player = createMediaPlayer(getResId("loop", R.raw.class));
+        final MediaPlayer player = createMediaPlayer(getResId("chuncha", R.raw.class));
 
         temp_button.setOnClickListener(new View.OnClickListener() {
             @Override
