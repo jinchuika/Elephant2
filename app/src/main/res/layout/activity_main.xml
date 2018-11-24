@@ -46,6 +46,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="58dp"
         android:background="@android:color/transparent"
+        android:onClick="goToLevelThree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
@@ -59,9 +60,20 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="51dp"
         android:background="@android:color/transparent"
+        android:onClick="goToLevelFour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:srcCompat="@drawable/nivel4" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="goToLevelManual"
+        app:srcCompat="@drawable/ayuda"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="498dp" />
 
 </android.support.constraint.ConstraintLayout>

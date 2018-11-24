@@ -23,7 +23,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".LevelTwoActivity"></activity>
+        <activity android:name=".LevelTwoActivity" />
+        <activity android:name=".LevelThreeActivity" />
+        <activity android:name=".LevelFourActivity" />
+        <activity android:name=".ManualActivity"></activity>
     </application>
 
 </manifest>
